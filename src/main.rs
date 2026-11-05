@@ -1,3 +1,8 @@
+mod platform;
+
+use platform::*;
+
 fn main() {
-    println!("Hello, world!");
+    let wnd = open_window();
+    close_window(wnd);
 }
