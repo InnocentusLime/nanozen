@@ -1,5 +1,15 @@
+pub trait Window {
+    fn keep_running(&self) -> bool;
+
+    fn handle_events(&mut self);
+
+    fn sleep(&self, time: Duration);
+}
+
 #[cfg(target_os = "linux")]
 mod linux;
+
+use std::time::Duration;
 
 #[cfg(target_os = "linux")]
 pub use linux::*;
