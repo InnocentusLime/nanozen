@@ -70,7 +70,7 @@ struct X11Window {
 }
 
 impl Window for X11Window {
-    fn keep_running(&self) -> bool {
+    fn is_open(&self) -> bool {
         self.keep_running
     }
 

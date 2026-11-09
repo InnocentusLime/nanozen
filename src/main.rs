@@ -14,7 +14,7 @@ fn main() -> ExitCode {
 
     let mut accum = Duration::ZERO;
     let mut prev = Instant::now();
-    while wnd.keep_running() {
+    while wnd.is_open() {
         wnd.handle_events();
 
         let now = Instant::now();

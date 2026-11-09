@@ -1,9 +1,13 @@
+/// The window object returned by open_window.
 pub trait Window {
-    fn keep_running(&self) -> bool;
+    /// Tell the user if the window is still open or not.
+    fn is_open(&self) -> bool;
 
+    /// Handle all OS events.
     fn handle_events(&mut self);
 
-    fn sleep(&self, time: Duration);
+    /// Sleep for timeout or until new events arrive.
+    fn sleep(&self, timeout: Duration);
 }
 
 #[cfg(target_os = "linux")]
